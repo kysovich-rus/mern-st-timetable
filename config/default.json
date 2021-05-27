@@ -1,0 +1,5 @@
+{
+  "port": 7000,
+  "jwtSecret": "totally Secret Code",
+  "mongoUri": "mongodb+srv://admin:zahodite@cluster0.8tl6u.mongodb.net/app?retryWrites=true&w=majority"
+}
