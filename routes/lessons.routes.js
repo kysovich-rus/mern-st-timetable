@@ -50,6 +50,15 @@ router.get('/:id', auth, async (req,res) => {
     }
 })
 
+router.delete('/:id/delete', auth, async (req,res) => {
+    try {
+        const lesson = await Lesson.findByIdAndRemove(req.params.id)
+        deletedName = lesson.subject
+        res.status(200).json({lesson, message: `Запись "${deletedName}" удалена`})
+    }catch (e) {
+        res.status(500).json({message: 'Что-то пошло не так...'})
+    }
+})
 module.exports = router
 
 

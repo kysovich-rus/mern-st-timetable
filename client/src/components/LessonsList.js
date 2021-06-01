@@ -4,6 +4,7 @@ export const LessonsList = ({ lessons}) => {
     if (!lessons.length) {
         return (<p className="center">Вы еще не создали ни одного занятия... <Link to ="/create">Создайте прямо сейчас!</Link></p>)
     }
+
     return (
         <table>
             <thead>

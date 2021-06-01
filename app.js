@@ -24,6 +24,7 @@ const PORT = config.get('port') || 7000
 async function start(){
     try {
         await mongoose.connect(config.get('mongoUri'), {
+            useFindAndModify: false,
             useNewUrlParser: true,
             useUnifiedTopology: true,
             useCreateIndex: true

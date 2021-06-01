@@ -18,7 +18,7 @@ export const Navbar = ({id}) => {
                 <span className="brand-logo" >Расписание студента</span>
                 <ul id="nav-mobile" className="right hide-on-med-and-down">
                     <li><NavLink to="/create">Создать</NavLink></li>
-                    <li><NavLink to ="/table">Расписание</NavLink></li>
+                    <li><NavLink to ="/table">Все записи</NavLink></li>
                     <li>ID: <strong>{id}</strong></li>
                     <li><a href ="/" onClick={logoutHandler}>Выйти</a></li>
                 </ul>

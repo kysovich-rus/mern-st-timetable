@@ -36,8 +36,12 @@ export const CreatePage = () => {
 
 
     return (
+
         <div className = "row">
+
             <div className="col s8 offset-s2" style = {{paddingTop: '2rem'}}>
+                <h3>Создание новой записи</h3>
+                <br/>
                 <div className="input-field">
                     <input
                         id="subject"

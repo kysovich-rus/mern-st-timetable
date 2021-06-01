@@ -6,6 +6,7 @@ import 'materialize-css'
 import {AuthContext} from "./context/auth.context";
 import {Navbar} from "./components/Navbar";
 import {Loader} from "./components/Loader"
+import {Footer} from "./components/Footer"
 
 
 
@@ -18,16 +19,19 @@ function App() {
         return <Loader />
     }
   return (
+<div className = "site">
       <AuthContext.Provider value = {{
           token, login, logout, userId, isAuthenticated
       }}>
         <Router>
             {isAuthenticated && <Navbar id = {userId}/>}
-         <div className = "container">
+           <div className = "site-content"><div className = "container">
                 {routes}
-         </div>
+           </div></div>
+            {isAuthenticated && <Footer/>}
         </Router>
       </AuthContext.Provider>
+</div>
   )
 }
 
