@@ -39,12 +39,14 @@ export const DetailTablePage = () => {
     const filterHandler = () => {
         var from = new Date(form.dateFrom)
         var to = new Date(form.dateTo)
-        from.setHours(0,0,0)
-        to.setHours(23,59,59)
-        setFiltered( lessons.filter(lesson => (new Date(lesson.beginDate) >= from && new Date(lesson.beginDate) <= to) ) )
-        if (filtered.length === 0) {
-            window.M.toast({html:'Записей в заданный временной промежуток не обнаружено!'})
-        }
+        console.log(from)
+        console.log(to)
+        if (from && to && from <= to) {
+            from.setHours(0,0,0)
+            to.setHours(23,59,59)
+            setFiltered( lessons.filter(lesson => (new Date(lesson.beginDate) >= from && new Date(lesson.beginDate) <= to) ) )
+        } else window.M.toast({html:'Не все поля заполнены или данные некорректны'})
+
     }
 
     if (loading) {

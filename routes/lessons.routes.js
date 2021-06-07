@@ -11,7 +11,7 @@ router.post('/create', auth, async(req,res) => {
         const begT = new Date(beginDate);
         const endT = new Date(endDate);
         if (begT>endT) {
-            return res.status (400).json({message: 'Некорректно заданы параметров дата/время'})
+            return res.status (400).json({message: 'Некорректно заданы параметры дата/время'})
         }
         const lesson = new Lesson ({
             owner: req.user.userId,
