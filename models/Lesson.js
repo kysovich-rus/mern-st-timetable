@@ -1,7 +1,7 @@
 const {Schema, model, Types} = require('mongoose')
 
 const schema = new Schema({
-    owner: {type: Types.ObjectId, ref:'User'},
+    owner: {type: Types.ObjectId, ref:'User',required:true},
     beginDate: {type: Date, required:true},
     endDate: {type: Date, required:true},
     subject: {type: String, required: true},

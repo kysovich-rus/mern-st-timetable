@@ -77,7 +77,7 @@ router.post('/login',
                 config.get('jwtSecret'),
                 { expiresIn: '1h'}
             )
-            res.json({ token, userId: user.id})
+            res.json({ token, userId: user.id, email: user.email})
 
 
         } catch(e) {

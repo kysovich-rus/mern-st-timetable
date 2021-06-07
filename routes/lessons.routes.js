@@ -27,10 +27,27 @@ router.post('/create', auth, async(req,res) => {
         res.status(201).json({message: 'Новая запись успешно добавлена!', lesson})
 
     } catch (e) {
-        res.status(500).json({ message: 'Упс! Что-то пошло не так... Попробуйте снова'})
+        res.status(500).json({ message: 'Упс! Что-то пошло не так... Проверьте заполнение всех полей или попробуйте снова'})
     }
 })
 
+
+/*router.get('/filter', auth, async (req,res) => {
+    try {
+        const {dateFrom, dateTo} = req.body
+        const from = new Date(dateFrom)
+        const to = new Date(dateTo)
+        from.setHours(0,0,0)
+        to.setHours(23,59,59)
+        console.log(from)
+        console.log(to)
+
+        const lessons = await Lesson.find({$and:[ {owner:await User.findById(req.user.userId)}, {beginDate: {$gte: from, $lte: to} } ]}).sort({"beginDate": 1})
+        res.status(200).json({lessons, message: `Поиск завершен`})
+    } catch(e) {
+        res.status(500).json({ message: 'Упс! Что-то пошло не так... Попробуйте снова'})
+    }
+})*/
 
 router.get('/', auth, async (req,res) => {
     try {
@@ -59,6 +76,7 @@ router.delete('/:id/delete', auth, async (req,res) => {
         res.status(500).json({message: 'Что-то пошло не так...'})
     }
 })
+
 module.exports = router
 
 

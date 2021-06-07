@@ -39,37 +39,40 @@ export const CreatePage = () => {
 
         <div className = "row">
 
-            <div className="col s8 offset-s2" style = {{paddingTop: '2rem'}}>
-                <h3>Создание новой записи</h3>
-                <br/>
-                <div className="input-field">
+            <div className="col s8 offset-s2">
+                <h3 align="center">Создание новой записи</h3>
+                <div className="input-field" style = {{marginTop:5}}>
                     <input
+                        className = "orange-input"
                         id="subject"
                         type="text"
                         name = "subject"
                         value ={form.subject}
                         onChange = {changeHandler}
                     />
-                    <label className="active" htmlFor="subject">Наименование</label>
+                    <label className="active" htmlFor="subject">Наименование*</label>
                 </div>
                 <div className="input-field">
-                    <input placeholder="Корпус-Аудитория" type="text" id="location" name = "location" value = {form.location} onChange = {changeHandler}/>
+                    <input className = "orange-input" placeholder="Корпус-Аудитория" type="text" id="location" name = "location" value = {form.location} onChange = {changeHandler}/>
                     <label className="active" htmlFor="location">Место проведения</label>
                 </div>
                 <div className="input-field">
-                    <input placeholder="ФИО преподавателя" type="text" id="teacher" name = "teacher" value = {form.teacher} onChange = {changeHandler}/>
+                    <input className = "orange-input" placeholder="ФИО преподавателя" type="text" id="teacher" name = "teacher" value = {form.teacher} onChange = {changeHandler}/>
                     <label className="active" htmlFor="teacher">Преподаватель</label>
                 </div>
-                <div className="input-field">
-                    <input type="datetime-local" id ="beginDate" name = "beginDate" value = {form.beginDate.valueAsNumber} onChange = {changeHandler}/>
-                    <label className="active" htmlFor="beginDate">Дата и время начала</label>
+                <div className="row">
+                    <div className="input-field col s12 m6">
+                        <input className = "orange-input" type="datetime-local" id ="beginDate" name = "beginDate" value = {form.beginDate.valueAsNumber} onChange = {changeHandler}/>
+                        <label className="active" htmlFor="beginDate">Дата и время начала*</label>
+                    </div>
+                    <div className="input-field col s12 m6">
+                        <input className = "orange-input" type="datetime-local" id="endDate" name = "endDate" value = {form.endDate.valueAsNumber} onChange = {changeHandler}/>
+                        <label className="active" htmlFor="endDate">Дата и время окончания*</label>
+                    </div>
                 </div>
-                <div className="input-field">
-                    <input type="datetime-local" id="endDate" name = "endDate" value = {form.endDate.valueAsNumber} onChange = {changeHandler}/>
-                    <label className="active" htmlFor="endDate">Дата и время окончания</label>
-                </div>
-                <div className="input-field">
-                    <textarea id="about" name = "about" value={form.about} onChange = {changeHandler} className="materialize-textarea" data-length="250"></textarea>
+
+                <div className="input-field" style = {{marginTop:-20}}>
+                    <textarea id="about" name = "about" value={form.about} onChange = {changeHandler} className="materialize-textarea orange-input" data-length="250"></textarea>
                     <label htmlFor="about">Описание</label>
                 </div>
 

@@ -3,7 +3,8 @@ import {Switch, Route, Redirect} from 'react-router-dom'
 import { CreatePage } from './pages/CreatePage'
 import { TablePage } from './pages/TablePage'
 import { DetailPage } from './pages/DetailPage'
-import { AuthPage} from './pages/AuthPage'
+import { AuthPage } from './pages/AuthPage'
+import { DetailTablePage} from './pages/DetailTablePage'
 
 
 export const useRoutes = isAuthenticated => {
@@ -12,6 +13,9 @@ export const useRoutes = isAuthenticated => {
             <Switch>
                 <Route path ="/table" exact>
                     <TablePage />
+                </Route>
+                <Route path = "/table/detail">
+                    <DetailTablePage />
                 </Route>
                 <Route path = "/create" exact>
                     <CreatePage />

@@ -1,6 +1,7 @@
 import React from 'react'
 
 export const LessonCard = ({lesson}) => {
+    console.log(lesson)
     return (
         <div className = "row">
 

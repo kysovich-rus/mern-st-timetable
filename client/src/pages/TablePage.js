@@ -22,12 +22,18 @@ export const TablePage = () => {
         fetchLessons()
     }, [fetchLessons])
 
+    useEffect(() => {
+        window.M.updateTextFields()
+    }, [])
+
     if (loading) {
         return <Loader/>
     }
     return (
         <div>
-            {!loading && <LessonsList lessons = {lessons}/> }
+            <div>
+                {!loading && <LessonsList lessons = {lessons}/> }
+            </div>
         </div>
     )
 }

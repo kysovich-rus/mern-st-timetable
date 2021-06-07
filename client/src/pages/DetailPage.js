@@ -25,14 +25,16 @@ export const DetailPage = () => {
     }, [token, lessonId, request])
 
     const deleteLesson = async () => {
-        try {
-            const data = await request(`/api/lessons/${lessonId}/delete`, 'DELETE', null, {
-                Authorization: `Bearer ${token}`
-            })
-            message(data.message)
-            history.push('/table')
-        } catch (e) {
-            console.log(`Непредвиденная ошибка при удалении записи`)
+        if (window.confirm ("Последствия данного действия являются необратимыми! Точно удалить?")) {
+            try {
+                const data = await request(`/api/lessons/${lessonId}/delete`, 'DELETE', null, {
+                    Authorization: `Bearer ${token}`
+                })
+                message(data.message)
+                history.push('/table')
+            } catch (e) {
+                console.log(`Непредвиденная ошибка при удалении записи`)
+            }
         }
     }
 

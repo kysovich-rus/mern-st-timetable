@@ -1,5 +1,8 @@
 @import "~materialize-css/dist/css/materialize.min.css";
 
+body {
+    background-color: #f3f3ff;
+}
 input.yellow-input {
     border-bottom: 1px solid #ffffff!important;
     box-shadow: 0 1px 0 0 #ffffff!important;
@@ -13,8 +16,33 @@ input.yellow-input:focus + label {
 }
 
 input.yellow-input:focus {
-    border-bottom: 1px solid #ffeb3b!important;
+    border-bottom: 0 solid #ffeb3b!important;
     box-shadow: 0 1px 0 0 #ffeb3b!important;
+}
+input.orange-input {
+
+    border-bottom: 0 solid #9e9e9e!important;
+    box-shadow: 0 1px 0 0 #9e9e9e!important;
+}
+input.orange-input + label {
+   color: #9e9e9e!important;
+}
+input.orange-input:focus + label {
+    color: #f9a825!important;
+}
+input.orange-input:focus {
+    border-bottom: 0 solid #f9a825!important;
+    box-shadow: 0 1px 0 0 #f9a825!important;
+}
+textarea.orange-input:focus+label{
+    color: #f9a825!important;
+}
+textarea.orange-input:focus {
+    border-bottom: 0 solid #f9a825!important;
+    box-shadow: 0 1px 0 0 #f9a825!important;
+}
+a.orange-link {
+    color: #f9a825!important;
 }
 
 .site {
